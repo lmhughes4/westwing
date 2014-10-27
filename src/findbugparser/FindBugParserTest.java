@@ -16,9 +16,9 @@ public class FindBugParserTest extends DefaultHandler {
 
 	private static Map<String, Integer> bugsPerClass;
 	
-	//this function is only main for testing
-	//An xml output from findbug analyzer is hardcoded into the code to run the parser on that file. The
-	//content of the variable bugsPerClass is printed in system console.
+	//this function is only a main function because of testing
+	//An xml output from findbug analyzer "findbugsoutput.xml"  is hardcoded into the code to
+    //run the parser to that file. The content of the variable bugsPerClass is printed in system console.
 	public static void main(String[] args) throws Exception{  
 		String filename = "findbugsoutput.xml";
 		
