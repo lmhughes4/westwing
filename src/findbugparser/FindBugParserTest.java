@@ -20,7 +20,7 @@ public class FindBugParserTest extends DefaultHandler {
 	//An xml output from findbug analyzer "findbugsoutput.xml"  is hardcoded into the code to
     //run the parser to that file. The content of the variable bugsPerClass is printed in system console.
 	public static void main(String[] args) throws Exception{  
-		String filename = "findbugsoutput.xml";
+		String filename = args[0];
 		
 		SAXParserFactory spf = SAXParserFactory.newInstance();
 	    spf.setNamespaceAware(true);

@@ -19,7 +19,7 @@ public class FindBugParser extends DefaultHandler {
 	// Takes in the filename of the xml file output from the FindBug analyzer and creates a hashmap that
 	// keeps count of how many bugs are in each class
 	public static Map<String, Integer> findBugParser(String xml) throws Exception{  
-		//String filename = null;
+		
 		String filename = xml;
 	    /*for (int i = 0; i < args.length; i++) {
 	        filename = args[i];
@@ -34,8 +34,8 @@ public class FindBugParser extends DefaultHandler {
 		//xmlReader.parse(convertToFileURL(filename));
 		xmlReader.parse(filename);
 		
+		
 		return bugsPerClass;
-
 	}
 	
 	/*private static String convertToFileURL(String filename) {
