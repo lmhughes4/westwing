@@ -1,3 +1,5 @@
+// Original source: http://www.redotheweb.com/CodeFlower/
+
 var CodeFlower = function(selector, w, h) {
   this.w = w;
   this.h = h;

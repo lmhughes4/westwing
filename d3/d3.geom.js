@@ -1,3 +1,5 @@
+// Original source: http://www.redotheweb.com/CodeFlower/
+
 (function(){d3.geom = {};
 /**
  * Computes a contour for a given input grid function using the <a

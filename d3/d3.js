@@ -1,3 +1,5 @@
+// Original source: http://www.redotheweb.com/CodeFlower/
+
 (function(){if (!Date.now) Date.now = function() {
   return +new Date;
 };
