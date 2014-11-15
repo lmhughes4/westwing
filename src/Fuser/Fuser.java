@@ -10,11 +10,11 @@ import org.json.JSONObject;
 
 public class Fuser {
 	static Map<String, Integer> blah;
-	static Map<String, Integer> jsonBlah;
+	static Map<String, String> jsonBlah;
 	
 	
 	
-	public static void fuse(Map<String, Integer> data, Map<String, Integer> depData) throws JSONException{
+	public static void fuse(Map<String, Integer> data, Map<String, String> depData) throws JSONException{
 		
 	    JSONObject json = new JSONObject(data);
 	    JSONObject depJson = new JSONObject(depData);
@@ -24,8 +24,10 @@ public class Fuser {
 	    String tmp_key;
 	    while(i1.hasNext()) {
 	    	tmp_key = (String) i1.next();
+//	    	System.out.printf(i1.next().toString());
 	        mergedObj.put(tmp_key, json.get(tmp_key));
 	    }
+	    
 	    while(i2.hasNext()) {
 	        tmp_key = (String) i2.next();
 	        mergedObj.put(tmp_key, depJson.get(tmp_key));
@@ -38,13 +40,13 @@ public class Fuser {
     public static void main(String[] args) throws Exception { 
     	 blah = new HashMap<String, Integer>();
  	    blah.put("name", 11 );
- 	    blah.put( "age", 32 );
- 	    blah.put( "city", 22);
+ 	    blah.put( "age", 22 );
+ 	    blah.put( "city", 33);
  	    
- 	    jsonBlah = new HashMap<String, Integer>();
- 	    jsonBlah.put("import ...", 1);
- 	    jsonBlah.put("import ..sf", 2);
- 	    jsonBlah.put("extends ..", 3);
+ 	    jsonBlah = new HashMap<String, String>();
+ 	    jsonBlah.put("import ...", "a");
+ 	    jsonBlah.put("import ..sf", "b");
+ 	    jsonBlah.put("extends ..", "c");
  	    
  	    
    	  fuse(blah, jsonBlah);
