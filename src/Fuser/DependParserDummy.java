@@ -16,8 +16,12 @@ import java.util.Map;
 
 public class DependParserDummy extends DefaultHandler {
 	
+	boolean isName;
+	
 	static Map<String, String> depPerClass;
 	boolean testa;
+
+	private StringBuffer blah;
 	public static Map<String, String> depParser(String xml) throws Exception{
 		String filename = xml;
 		/*for (int i = 0; i < args.length; i++) {
@@ -47,9 +51,10 @@ public class DependParserDummy extends DefaultHandler {
 		switch(qName){
 		case "name":
 			testa = true;
+			blah = new StringBuffer();
 		String className = attributes.getValue("name");
-		String aClassName = attributes.getValue("inbound type");
-		aClassName = aClassName.substring(aClassName.lastIndexOf('.')+1).trim();
+		//String aClassName = attributes.getValue("inbound type");
+		//aClassName = aClassName.substring(aClassName.lastIndexOf('.')+1).trim();
 	
 
 		}
@@ -57,7 +62,10 @@ public class DependParserDummy extends DefaultHandler {
 	 
 	public void characters(char ch[], int start, int length) throws SAXException {
 		if(testa){
-			System.out.println(new String(ch, start, length));
+			blah.append(new String(ch, start, length));
+			System.out.println(blah);
+			//System.out.println(new String(ch, start, length));
+			
 	}
 		
 		}
