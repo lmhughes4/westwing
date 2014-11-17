@@ -17,6 +17,7 @@ import java.util.Map;
 public class DependParserDummy extends DefaultHandler {
 	
 	boolean isName;
+	String classname;
 	
 	static Map<String, String> depPerClass;
 	boolean testa;
@@ -27,7 +28,7 @@ public class DependParserDummy extends DefaultHandler {
 		/*for (int i = 0; i < args.length; i++) {
 		filename = args[i];
 		}
-		*/
+		*/ 
 		SAXParserFactory spf = SAXParserFactory.newInstance();
 		spf.setNamespaceAware(true);
 		SAXParser sp = spf.newSAXParser();
@@ -49,21 +50,37 @@ public class DependParserDummy extends DefaultHandler {
 		
 	public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
 		switch(qName){
-		case "name":
+		
+		
+		case "class": 
+			for(int i = 0; i < attributes.getLength(); i++) {
+			    if (attributes.getValue(i).contains("yes"))
+			    	testa = false;
+			    	
+			}
+			
+		
+			
+		case "name": {
 			testa = true;
 			blah = new StringBuffer();
-		String className = attributes.getValue("name");
+		}
+			}
 		//String aClassName = attributes.getValue("inbound type");
 		//aClassName = aClassName.substring(aClassName.lastIndexOf('.')+1).trim();
 	
 
-		}
+		
 	}
 	 
 	public void characters(char ch[], int start, int length) throws SAXException {
+	
 		if(testa){
 			blah.append(new String(ch, start, length));
+			if (!blah.toString().contains(".")) {
 			System.out.println(blah);
+			}
+			
 			//System.out.println(new String(ch, start, length));
 			
 	}
