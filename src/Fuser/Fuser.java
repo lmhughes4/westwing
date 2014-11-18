@@ -30,7 +30,7 @@ public class Fuser {
 	    
 	    while(i2.hasNext()) {
 	        tmp_key = (String) i2.next();
-	        mergedObj.put(tmp_key, depJson.get(tmp_key));
+	       mergedObj.accumulate(tmp_key, depJson.get(tmp_key));
 	    }
 	    System.out.printf( "JSON: %s", mergedObj.toString(2) );
 	    
@@ -44,7 +44,7 @@ public class Fuser {
  	    blah.put( "city", 33);
  	    
  	    jsonBlah = new HashMap<String, String>();
- 	    jsonBlah.put("import ...", "a");
+ 	    jsonBlah.put("name", "a");
  	    jsonBlah.put("import ..sf", "b");
  	    jsonBlah.put("extends ..", "c");
  	    
