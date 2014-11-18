@@ -1,0 +1,4 @@
+Updated documentation for the =ListSymbols= Ant task.
+
+Added =FilteringSymbolgathererStrategy= to support inclusion and exclusion
+regular expressions to =ListSymbols=.

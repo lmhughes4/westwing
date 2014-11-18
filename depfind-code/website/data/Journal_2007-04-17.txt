@@ -1,0 +1,3 @@
+Fixed the documentation for =JarJarDiff= (both CLI and Ant task) and
+=ClassClassDiff=.  I also realized I had not updated the documentation of the
+Ant tasks that is on the website, so I fixed it too.
