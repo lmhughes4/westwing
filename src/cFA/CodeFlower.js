@@ -83,20 +83,32 @@ CodeFlower.prototype.update = function(json) {
 
     .style("fill", function color(d) {
     	if ( d.bugs < 10){
-    		return "hsl(" + d.id*0 +",100%,50%)";}
+    		return "hsl(99,100%,50%)";}
     	else if ( d.bugs < 50 && d.bugs >10){
 
-    		return "hsl(" + parseInt(360 / total * d.id, 10) + ",90%,70%)";
+    		return "hsl(77,100%,50%)";
     	}
     	else if ( d.bugs < 100 && d.bugs >50){
 
-    		return "hsl(" + d.id + ",90%,70%)";
+    		return "hsl(66,100%,50%)";
     	}
-    	else if ( d.bugs < 200 && d.bugs >100){
+    	else if ( d.bugs < 150 && d.bugs >100){
 
-    		return "hsl(" + d.id*2 + ",90%,70%)";
+    		return "hsl(56,100%,50%)";
     	}
-    	else return "hsl(10%,90%,70%)";
+    	else if ( d.bugs < 200 && d.bugs >150){
+
+    		return "hsl(42,100%,50%)";
+    	}
+    	else if ( d.bugs < 300 && d.bugs >200){
+
+    		return "hsl(26,100%,50%)";
+    	}
+    	else if ( d.bugs < 300 && d.bugs >200){
+
+    		return "hsl(26,100%,50%)";
+    	}
+    	else return "hsl(351,100%,50%)";
     })
     .call(this.force.drag)
     .on("click", this.click.bind(this))
