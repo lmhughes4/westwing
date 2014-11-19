@@ -1,3 +1,5 @@
+// Original source: http://www.redotheweb.com/CodeFlower/
+
 var CodeFlower = function(selector, w, h) {
   this.w = w;
   this.h = h;
@@ -70,7 +72,9 @@ CodeFlower.prototype.update = function(json) {
   this.node.enter().append('svg:circle')
     .attr("class", "node")
     .classed('directory', function(d) { return (d._children || d.children) ? 1 : 0; })
+    //changes width of node
     .attr("r", function(d) { return d.children ? 3.5 : Math.pow(d.size, 2/5) || 1; })
+    
     // changes colour of nodes
     // total is the total number of nodes
     // id is the position of the node in the array
@@ -79,20 +83,32 @@ CodeFlower.prototype.update = function(json) {
 
     .style("fill", function color(d) {
     	if ( d.bugs < 10){
-    		return "hsl(" + d.id*0 +",100%,50%)";}
-    	else if ( d.bugs < 50 && d.size >10){
+    		return "hsl(99,100%,50%)";}
+    	else if ( d.bugs < 50 && d.bugs >10){
 
-    		return "hsl(" + parseInt(360 / total * d.id, 10) + ",90%,70%)";
+    		return "hsl(77,100%,50%)";
     	}
-    	else if ( d.bugs < 100 && d.size >50){
+    	else if ( d.bugs < 100 && d.bugs >50){
 
-    		return "hsl(" + d.id + ",90%,70%)";
+    		return "hsl(66,100%,50%)";
     	}
-    	else if ( d.bugs < 200 && d.size >100){
+    	else if ( d.bugs < 150 && d.bugs >100){
 
-    		return "hsl(" + d.id*2 + ",90%,70%)";
+    		return "hsl(56,100%,50%)";
     	}
-    	else return "hsl(10%,90%,70%)";
+    	else if ( d.bugs < 200 && d.bugs >150){
+
+    		return "hsl(42,100%,50%)";
+    	}
+    	else if ( d.bugs < 300 && d.bugs >200){
+
+    		return "hsl(26,100%,50%)";
+    	}
+    	else if ( d.bugs < 300 && d.bugs >200){
+
+    		return "hsl(26,100%,50%)";
+    	}
+    	else return "hsl(351,100%,50%)";
     })
     .call(this.force.drag)
     .on("click", this.click.bind(this))

@@ -1,5 +1,9 @@
+// Original source: http://www.redotheweb.com/CodeFlower/
+
 /**
- * Chrome AppSniffer
+ 
+
+* Chrome AppSniffer
  *
  * Detect apps run on current page and send back to background page.
  * Some part of this script was refered from Wappalyzer Firefox Addon.
@@ -8,6 +12,7 @@
  * @license GPLv3
  **/
  
+
 (function () {
 	var _apps = {};
 	var doc = document.documentElement;

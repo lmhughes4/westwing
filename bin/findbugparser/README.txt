@@ -1,0 +1,3 @@
+The FindBugParserTest is the same as the FindBugParser class but instead of calling the findBugParser in the FindBugParser class there is a main class in the Test Class so it can be run as a standalone .class file in Eclipse. The xml output obtained from running the findbugs analyzer on the source code of the dependency finder analyzer is hardcoded into the Test Class for it to parse through. The output printed in the system console is the content inside the HashMap variable bugsPerClass.
+
+The findbugs-3.0.0 is the folder containing the findbug analyzer including its source code.

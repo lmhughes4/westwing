@@ -1,3 +1,5 @@
+// Original source: http://www.redotheweb.com/CodeFlower/
+
 var convertToJSON = function(data, origin) {
   return (origin == 'cloc') ? convertFromClocToJSON(data) : convertFromWcToJSON(data);
 };
