@@ -49,7 +49,7 @@ public class Fuser {
 	    return fusedMap;  
 	}
 	
-	public static void mapToJson(HashMap<String, Object> map) throws JSONException{
+	public static JSONObject mapToJson(HashMap<String, Object> map) throws JSONException{
 		JSONObject json = new JSONObject();
 		json.put("name","root");
 		for(Entry<String, Object> entry : map.entrySet()){
@@ -77,6 +77,8 @@ public class Fuser {
 			json.accumulate("children",json2);
 			System.out.println("json: " + json);
 		}
+        
+        return json;
 
 	}
 	
