@@ -92,38 +92,7 @@ public class Fuser {
  	    
  	    
    	  mapToJson(fuse(jsonBlah,blah));
-    }
-	    
-    
-    /*
-     * 	    JSONObject json = new JSONObject(data);
-    	System.out.println("JSON: " + json);
-	    JSONObject depJson = new JSONObject(depData);
-    	System.out.println("JSON: " + depJson);
-	    JSONObject mergedObj = new JSONObject();
-	    Iterator i1 = json.keys();
-	    Iterator i2 = depJson.keys();
-	    String tmp_key;
-	    while(i1.hasNext()) {
-	    	tmp_key = (String) i1.next();
-//	    	System.out.printf(i1.next().toString());
-		    JSONObject mergedObj2 = new JSONObject();
-	        mergedObj2.put("name", tmp_key);
-	        mergedObj2.put("bugs", json.get(tmp_key));
-	 
-	    }
-	   	System.out.println("mergedJSON: " + mergedObj);
-	    
-	    while(i2.hasNext()) {
-	        tmp_key = (String) i2.next();
-	       if(mergedObj.get("name") == tmp_key)
-	    	System.out.println("i2 temp_key: " + tmp_key);
-	    	System.out.println("i2 temp_key value: " + depJson.get(tmp_key) );
-	       mergedObj.accumulate(tmp_key, depJson.get(tmp_key));
-	    }
-	    System.out.printf( "JSON: %s", mergedObj.toString(2) );
-     */
-    
+    } 
     
 
 }
