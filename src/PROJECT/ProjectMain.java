@@ -1,5 +1,11 @@
+package PROJECT;
+
 import java.io.IOException;
 import java.util.Map;
+
+import lineCounter.LineCounter;
+
+import findbugparser.FindBugParser;
 
 
 public class ProjectMain {
