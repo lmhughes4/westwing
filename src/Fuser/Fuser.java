@@ -1,14 +1,11 @@
 package Fuser;
 
 
-import java.awt.List;
+
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
-
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -21,15 +18,25 @@ public class Fuser {
 	
 	
 	
-	public static HashMap<String, Object> fuse( Map<String, String> data,  Map<String, HashMap<String,String>> depData) throws JSONException{
+	public static HashMap<String, Object> fuse( Map<String, String> data,  Map<String, HashMap<String,String>> depData, Map<String,String> lineCount) throws JSONException{
 		HashMap<String, Object> fusedMap = new HashMap<String, Object>();
 		
 		for(Entry<String, String> entry : data.entrySet()){
-			ArrayList<Object> list = new ArrayList();
+			ArrayList<Object> list = new ArrayList<Object>();
 			list.add(entry.getValue());
 		    fusedMap.put(entry.getKey(), list);
 		}
 
+		for(Entry<String, String> entryL : lineCount.entrySet()){
+			   if(fusedMap.containsKey(entryL.getKey())){	
+					ArrayList<Object> list = new ArrayList<Object>();
+					list = (ArrayList<Object>) fusedMap.get(entryL.getKey());
+					list.add(entryL.getValue());
+				    fusedMap.put(entryL.getKey(), list);
+			   }
+			
+		}
+		
 	   for(Entry<String, HashMap<String, String>> entry : depData.entrySet()){
 		   if(fusedMap.containsKey(entry.getKey())){			
 			   ArrayList<Object> list;
@@ -54,10 +61,12 @@ public class Fuser {
 			list = (ArrayList<Object>) entry.getValue();
 			json2.put("bugs", list.get(0));
 
+			json2.put("loc", list.get(1));
+			
 			JSONObject json3 = new JSONObject();
 			
-			HashMap<String,String> dep = (HashMap<String, String>) list.get(1);
-			for(Entry<String, String> entry2 : dep.entrySet()){
+			HashMap<String,Object> dep = (HashMap<String, Object>) list.get(2);
+			for(Entry<String, Object> entry2 : dep.entrySet()){
 
 				json3.put("dep_name", entry2.getKey());
 				json3.put("call_number", entry2.getValue());
@@ -89,9 +98,13 @@ public class Fuser {
  	    jsonBlah.put("name", "a");
  	    jsonBlah.put("import", "b");
  	    jsonBlah.put("city", "c");
+
+ 		 HashMap<String, String> loc = new HashMap<String, String>();
+ 		 loc.put("name","2");
+ 		 loc.put("import","3");
+ 		 loc.put("city","4");
  	    
- 	    
-   	  mapToJson(fuse(jsonBlah,blah));
+   	  mapToJson(fuse(jsonBlah,blah,loc));
     } 
     
 
