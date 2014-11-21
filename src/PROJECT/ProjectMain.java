@@ -1,6 +1,8 @@
 package PROJECT;
 
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Map;
 
 import lineCounter.LineCounter;
@@ -8,9 +10,9 @@ import lineCounter.LineCounter;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import DepParser.src.depParser;
+import DepParser.depParser;
 import Fuser.Fuser;
-import cFA.CFA;
+//import cFA.CFA;
 import findbugparser.FindBugParser;
 
 
@@ -51,10 +53,14 @@ public class ProjectMain {
 		} catch (JSONException e) {
 		}
 		JSONWrite.JSONtoJS(jsonInput);
+		URI uri;
 		try {
-			CFA.visualize();
-		} catch (Exception e) {
+			uri = new URI("index.html");
+			DesktopApi.browse(uri);
+		} catch (URISyntaxException e) {
 		}
+
+
 
 	}
 
