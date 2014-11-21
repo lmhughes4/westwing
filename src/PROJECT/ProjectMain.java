@@ -1,8 +1,17 @@
+package PROJECT;
+
 import java.io.IOException;
 import java.util.Map;
 
+import lineCounter.LineCounter;
+
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import DepParser.src.depParser;
+import Fuser.Fuser;
+import cFA.CFA;
+import findbugparser.FindBugParser;
 
 
 public class ProjectMain {
@@ -10,6 +19,7 @@ public class ProjectMain {
 		Map<String, Integer> findBugHashMap = null;
 		Map<String, Integer> locHashMap = null;
 		Map<String, Map<String,Integer>> depHashMap = null;
+		JSONObject jsonInput = null;
 
 
 		Runtime rt = Runtime.getRuntime();
@@ -35,10 +45,15 @@ public class ProjectMain {
 		//System.out.println(locHashMap);
 
 		try {
-			JSONObject jsonInput = Fuser.mapToJson(Fuser.fuse(findBugHashMap,depHashMap,locHashMap));
+			jsonInput = Fuser.mapToJson(Fuser.fuse(findBugHashMap,depHashMap,locHashMap));
 			System.out.println("json: " + jsonInput);
 
 		} catch (JSONException e) {
+		}
+		JSONWrite.JSONtoJS(jsonInput);
+		try {
+			CFA.visualize();
+		} catch (Exception e) {
 		}
 
 	}

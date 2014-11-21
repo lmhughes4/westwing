@@ -6,7 +6,7 @@ import java.net.URI;
 
 public class CFA {
 		
-	    public static void main(String[] args) throws Exception {  
+	    public static void visualize() throws Exception {  
 	 
 	       // opens browser window with CodeFlower image 
 	        if(Desktop.isDesktopSupported())
