@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="annotations/src"/>
+	<classpathentry kind="src" path="core/src"/>
+	<classpathentry kind="src" path="core/test/unit"/>
+	<classpathentry kind="src" path="spring/src"/>
+	<classpathentry kind="src" path="spring/test"/>
+	<classpathentry kind="lib" path="lib/runtime/dom4j.jar"/>
+	<classpathentry kind="lib" path="lib/runtime/guava.jar"/>
+	<classpathentry kind="lib" path="lib/runtime/jackson-annotations.jar"/>
+	<classpathentry kind="lib" path="lib/runtime/jackson-core.jar"/>
+	<classpathentry kind="lib" path="lib/runtime/jackson-databind.jar"/>
+	<classpathentry kind="lib" path="lib/runtime/javassist.jar"/>
+	<classpathentry kind="lib" path="lib/runtime/jsr305.jar"/>
+	<classpathentry kind="lib" path="lib/runtime/reflections.jar"/>
+	<classpathentry kind="lib" path="lib/runtime/xml-apis.jar"/>
+	<classpathentry kind="lib" path="lib/spring/aopalliance.jar"/>
+	<classpathentry kind="lib" path="lib/spring/commons-logging.jar"/>
+	<classpathentry kind="lib" path="lib/spring/spring-aop.jar"/>
+	<classpathentry kind="lib" path="lib/spring/spring-beans.jar"/>
+	<classpathentry kind="lib" path="lib/spring/spring-context.jar"/>
+	<classpathentry kind="lib" path="lib/spring/spring-core.jar"/>
+	<classpathentry kind="lib" path="lib/spring/spring-expression.jar"/>
+	<classpathentry kind="lib" path="lib/test/hamcrest-core.jar"/>
+	<classpathentry kind="lib" path="lib/test/junit.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

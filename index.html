@@ -38,6 +38,13 @@ line.link {
     </style>
   </head>
 <body>
+<form>
+JSON:<br>
+<input type="text" name="json">
+<br>
+
+</form>
+
     <div class = "content">
         <div class = "container">
             <p class = "lead"> </p>
@@ -46,16 +53,18 @@ line.link {
         </div>
     </div>
  
-  <script src="atest.json"></script>
+ 
     <script type="text/javascript" src="d3/d3.js"></script>
     <script type="text/javascript" src="d3/d3.geom.js"></script>
     <script type="text/javascript" src="d3/d3.layout.js"></script>
     <script type="text/javascript" src="src/cFA/CodeFlower.js"></script>
     <script type="text/javascript" src="src/cFA/dataConverter.js"></script>
+    <script type="text/javascript" src="src/cFA/require.js"></script>
     <script type="text/javascript">
     
+    var json = require('C:\Users\Lisa\westwing\CodeFlowerVisualizer\data.json');
 
-	var json = {"name":"root","children":[{"name":"PhoneNumber.php","size":22,"bugs":300,"language":"PHP"},{"name":"build.xml","size":122,"bugs":25,"language":"XML"}],"size":139837};
+	var json2 = {"name":"root","children":[{"name":"PhoneNumber.php","size":22,"bugs":300,"language":"PHP"},{"name":"build.xml","size":122,"bugs":25,"language":"XML"}],"size":139837};
 	
      var jsonData = {"name":"root","children":[{"name":"PhoneNumber.php","size":22,"language":"PHP"},{"name":"build.xml","size":122,"language":"XML"}],"size":139837};
     
@@ -216,6 +225,7 @@ var jdata2 = {"name": "root",
 };
 
 
+
                var total = countElements(jdata4);
         w = parseInt(Math.sqrt(total) * 33, 13);
         h = parseInt(Math.sqrt(total) * 33, 13)
@@ -223,5 +233,6 @@ var jdata2 = {"name": "root",
         myFlower.update(jdata4);
 
     </script>
+
 </body>
 </html>

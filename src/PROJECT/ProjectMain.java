@@ -11,7 +11,9 @@ import lineCounter.LineCounter;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import DepParser.src.depParser;
+import depParser.depParser;
+
+
 import Fuser.Fuser;
 
 import findbugparser.FindBugParser;
@@ -31,8 +33,10 @@ public class ProjectMain {
 		Process pr = rt.exec(command);
 		pr.waitFor();
 
-		//command = "cmd /C DependencyExtractor -xml -out depOutput.xml " + args[0];
-		command = "DependencyExtractor -xml -out depOutput.xml " + args[0];
+		command = "cmd /C DependencyExtractor -xml -out depOutput.xml " + args[0];
+		//command = "DependencyExtractor -xml -out depOutput.xml " + args[0];
+		
+		//C:\\Users\\Lisa\\westwing\\CodeFlowerVisualizer\\bin\\depParser\\depOutput.xml
 
 		pr = rt.exec(command);
 
