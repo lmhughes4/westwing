@@ -119,11 +119,106 @@ var jdata2 = {"name": "root",
         } ], "size": 2520, "bugs": 8
 };
        
-               var total = countElements(jdata2);
+       var jdata4 = {
+    "name": "root",
+    "children": [
+        {
+            "name": "speed",
+            "children": [
+                {
+                    "name": "jquery-basis.js",
+                    "children": [
+                        {
+                            "name": "dimensions.js","size": 325
+                        },
+                        {
+                            "name": "css.html", "size": 68
+                        }
+                    ],
+                    "size": 40,
+                    "bugs": 10,
+                    "language": "Javascript"
+                },
+                {
+                    "name": "filter.html",
+                    "size": 181,
+                    "bugs": 8,
+                    "language": "HTML"
+                },
+                {
+                    "name": "find.html",
+                    "size": 177,
+                    "bugs": 5,
+                    "language": "HTML"
+                },
+                {
+                    "name": "unit",
+                    "children": [
+                        {
+                            "name": "event.js",
+                            "size": 192,
+                            "bugs": 75,
+                            "language": "Javascript"
+                        },
+                        {
+                            "name": "dimensions.js",
+                            "size": 325,
+                            "bugs": 100,
+                            "language": "Javascript"
+                        }
+                    ],
+                    "size": 124,
+                    "bugs": 5
+                },
+                {  "name": "benchmarker.js",
+                    "size": 139,
+                    "bugs": 40,
+                    "language": "Javascript"
+                },
+                { "name": "css.html",
+                    "size": 68,
+                    "bugs": 15,
+                    "language": "HTML"
+                },
+                { "name": "data",
+                    "children": [
+                        {  "name": "testrunner.js",
+                            "size": 245,
+                            "bugs": 85,
+                            "language": "Javascript"
+                        },
+                        { "name": "testsuite.css",
+                            "size": 112,
+                            "bugs": 10,
+                            "language": "CSS"
+                        }
+                    ],
+                    "size": 1432,
+                    "bugs": 8
+                },
+                { "name": "index.html",
+                    "size": 62,
+                    "bugs": 10,
+                    "language": "HTML"
+                },
+                {  "name": "benchmarker.css",
+                    "size": 52,
+                    "bugs": 25,
+                    "language": "CSS"
+                }
+            ],
+            "size": 5114,
+            "bugs": 4
+        }
+    ],
+    "size": 2520,
+    "bugs": 8
+};
+               var total = countElements(jdata4);
         w = parseInt(Math.sqrt(total) * 33, 13);
         h = parseInt(Math.sqrt(total) * 33, 13)
         var myFlower = new CodeFlower("#visualization", w, h);
-        myFlower.update(jdata2);
+        myFlower.update(jdata4);
 
     </script>
 </body>

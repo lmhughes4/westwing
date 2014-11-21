@@ -18,7 +18,7 @@ public class FindBugMainJ {
 		  String findBugsXML = "OUTPUT.xml";
 		  //System.out.println(findBugsXML);
 		  try{
-			  findBugHashMap = FindBugParser.findBugParser(findBugsXML);
+		findBugHashMap = FindBugParser.findBugParser(findBugsXML);
 			  System.out.println(findBugHashMap);
 		  } catch (Exception e) {
 		}

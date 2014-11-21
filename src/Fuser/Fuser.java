@@ -11,7 +11,7 @@ import org.json.JSONObject;
 
 public class Fuser {
 	static Map<String, HashMap<String,String>> blah;
-	static Map<String, String> jsonBlah;
+	static Map<String,Integer> jsonBlah;
 	static HashMap<String, String> example;
 	static HashMap<String, String> example2;
 	static HashMap<String, String> example3;
@@ -34,6 +34,7 @@ public class Fuser {
 					list.add(entryL.getValue());
 				    fusedMap.put(entryL.getKey(), list);
 			   }
+			   
 		}
 		
 	   for(Entry<String, HashMap<String, String>> entry : depData.entrySet()){
