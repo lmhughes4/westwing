@@ -1,5 +1,3 @@
-package PROJECT;
-
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
@@ -46,11 +44,11 @@ public class depParser {
 			      
 			      temp = (fstNm.item(0)).getNodeValue();
 			      String className = temp.substring(temp.lastIndexOf('.')+1).trim();
-			      System.out.println("Class: "  + className);
+			      //System.out.println("Class: "  + className);
 			      HashMap<String, Integer> classmap = new HashMap<String, Integer>();
 			      
 			      
-			      System.out.println("	"+fstElmnt.getAttributeNode("confirmed"));			      
+			      //System.out.println("	"+fstElmnt.getAttributeNode("confirmed"));			      
 			      
 			      NodeList lstNmElmntLst = fstElmnt.getElementsByTagName("outbound");
 			      
