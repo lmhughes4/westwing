@@ -123,19 +123,28 @@ public class Fuser {
 			//JSONObject json3 = new JSONObject();
 
 			HashMap<String,Object> dep = (HashMap<String, Object>) list.get(2);
+			if(!dep.entrySet().isEmpty()){
 			for(Entry<String, Object> entry2 : dep.entrySet()){
+				if(entry2 == null){
+					json2.accumulate("dependencies", "0");
+					System.out.println("beenhere");
+					break;
+				}
 				JSONObject json3 = new JSONObject();
 				json3.put("dep_name", entry2.getKey());
 				json3.put("call_number", entry2.getValue());
 				//System.out.println(json3);
 				json2.accumulate("dependencies", json3);
 			}
+			}else{
+				json2.accumulate("dependencies", 0);
+			}
 			//json2.put("dependencies", json3);
 			json.accumulate("children",json2);
 
 		}
 		//System.out.println(json.ge);
-		System.out.println("json: " + json);
+		//System.out.println("json: " + json);
         return json;
 
 	}
